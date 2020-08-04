@@ -9,6 +9,12 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.7s ease, color 1s ease;
+}
+
 ul {
   list-style-type: none;
 }
@@ -25,6 +31,8 @@ h1 {
 
 h2 {
   font-size: 2.4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 p {
@@ -34,8 +42,8 @@ p {
 .navbar {
   height: 7rem;
   width: 100%;
-  background: black;
-  color: whitesmoke;
+  background: var(--bg-nav);
+  color: var(--text);
   font-size: 1.6rem;
 }
 
@@ -48,7 +56,7 @@ p {
 
 header {
   padding: 4rem;
-  background: blue;
+  background: var(--bg-nav);
   margin-bottom: 4rem;
   padding-bottom: 8rem;
   text-align: center;
@@ -65,8 +73,8 @@ img {
   width: 50rem;
   opacity: 0;
   z-index: 2;
-  background: black;
-  border-top: 2px solid white;
+  background: var(--bg-dropdown);
+  border-top: 2px solid var(--border-color);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -91,11 +99,66 @@ img {
 
 .dropdown__item a::before {
   content: "";
-  border: 2px solid white;
+  border: 2px solid var(--border-color);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
+}
+
+#dark::before {
+  background: #2a2e35;
+}
+
+#light::before {
+  background: #ffffff;
+}
+
+#solar::before {
+  background: var(--bg-solar);
+}
+
+/* Themes */
+
+:root {
+  --gray0: #f8f8f8;
+  --gray1: #dbe1e8;
+  --gray2: #b2becd;
+  --gray3: #6c7983;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
+  --blue: #0084a5;
+  --purple: #a82dd1;
+  --yellow: #fff565;
+}
+
+.light {
+  --bg: var(--gray0);
+  --bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+  --bg-dropdown: var(--gray0);
+  --text: var(--gray6);
+  --border-color: var(--blue);
+  --bg-solar: var(--yellow);
+}
+
+.dark {
+  --bg: var(--gray5);
+  --bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
+  --bg-dropdown: var(--gray6);
+  --text: var(--gray0);
+  --border-color: var(--purple);
+  --bg-solar: var(--blue);
+}
+
+.solar {
+  --gray0: #fbffd4;
+  --gray1: #f7f8d0;
+  --gray2: #b6f880;
+  --gray3: #5ec72d;
+  --gray4: #3ea565;
+  --gray5: #005368;
+  --gray6: #003d4c;
 }
